@@ -36,7 +36,7 @@ const therapists = [
     rating: 5.0,
     reviews: 112,
     available: false,
-    image: "https://images.unsplash.com/photo-1594824436979-373db59b5894?auto=format&fit=crop&q=80&w=200&h=200",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200",
     color: "#dde8f4",
     textColor: "#3a5296",
   },
@@ -100,8 +100,8 @@ export function Therapists() {
                 <div className="absolute top-4 right-4">
                   <span
                     className={`text-xs font-semibold px-3 py-1 rounded-full ${t.available
-                        ? "bg-[#e4ede4] text-[#334f34]"
-                        : "bg-[#f5f5f5] text-[#999]"
+                      ? "bg-[#e4ede4] text-[#334f34]"
+                      : "bg-[#f5f5f5] text-[#999]"
                       }`}
                   >
                     {t.available ? "● Disponível" : "○ Agenda cheia"}
@@ -179,8 +179,8 @@ export function Therapists() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center justify-center gap-2 font-semibold text-sm px-4 py-3 rounded-full transition-all ${t.available
-                      ? "bg-[#527d52] text-white hover:bg-[#3f6340] shadow-sm hover:shadow-md"
-                      : "bg-[#f5f5f5] text-[#999] cursor-not-allowed"
+                    ? "bg-[#527d52] text-white hover:bg-[#3f6340] shadow-sm hover:shadow-md"
+                    : "bg-[#f5f5f5] text-[#999] cursor-not-allowed"
                     }`}
                 >
                   <MessageCircle size={15} />
