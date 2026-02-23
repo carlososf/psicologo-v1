@@ -1,4 +1,4 @@
-import { Star, MessageCircle } from "lucide-react";
+import { Star, MessageCircle, Target } from "lucide-react";
 
 const therapists = [
   {
@@ -10,7 +10,7 @@ const therapists = [
     rating: 4.9,
     reviews: 87,
     available: true,
-    initials: "CR",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200",
     color: "#c9dbc9",
     textColor: "#334f34",
   },
@@ -23,7 +23,7 @@ const therapists = [
     rating: 4.8,
     reviews: 64,
     available: true,
-    initials: "LM",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=200&h=200",
     color: "#efe0cc",
     textColor: "#7a5c3a",
   },
@@ -36,7 +36,7 @@ const therapists = [
     rating: 5.0,
     reviews: 112,
     available: false,
-    initials: "BS",
+    image: "https://images.unsplash.com/photo-1594824436979-373db59b5894?auto=format&fit=crop&q=80&w=200&h=200",
     color: "#dde8f4",
     textColor: "#3a5296",
   },
@@ -49,7 +49,7 @@ const therapists = [
     rating: 4.9,
     reviews: 73,
     available: true,
-    initials: "FC",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200&h=200",
     color: "#fde8e8",
     textColor: "#9b3a2f",
   },
@@ -89,20 +89,20 @@ export function Therapists() {
                 className="h-40 flex items-center justify-center relative"
                 style={{ backgroundColor: t.color }}
               >
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg"
-                  style={{ backgroundColor: "white", color: t.textColor }}
-                >
-                  {t.initials}
+                <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Availability badge */}
                 <div className="absolute top-4 right-4">
                   <span
-                    className={`text-xs font-semibold px-3 py-1 rounded-full ${
-                      t.available
+                    className={`text-xs font-semibold px-3 py-1 rounded-full ${t.available
                         ? "bg-[#e4ede4] text-[#334f34]"
                         : "bg-[#f5f5f5] text-[#999]"
-                    }`}
+                      }`}
                   >
                     {t.available ? "● Disponível" : "○ Agenda cheia"}
                   </span>
@@ -178,11 +178,10 @@ export function Therapists() {
                   href={`https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma sessão com ${t.name}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center justify-center gap-2 font-semibold text-sm px-4 py-3 rounded-full transition-all ${
-                    t.available
+                  className={`flex items-center justify-center gap-2 font-semibold text-sm px-4 py-3 rounded-full transition-all ${t.available
                       ? "bg-[#527d52] text-white hover:bg-[#3f6340] shadow-sm hover:shadow-md"
                       : "bg-[#f5f5f5] text-[#999] cursor-not-allowed"
-                  }`}
+                    }`}
                 >
                   <MessageCircle size={15} />
                   {t.available ? "Agendar sessão" : "Lista de espera"}
@@ -194,7 +193,9 @@ export function Therapists() {
 
         {/* Quiz CTA */}
         <div className="mt-16 bg-[#f4f7f4] rounded-3xl p-10 text-center">
-          <span className="text-3xl block mb-4">🎯</span>
+          <div className="flex justify-center mb-4">
+            <Target size={40} className="text-[#527d52]" />
+          </div>
           <h3
             style={{ fontFamily: "'Lora', serif" }}
             className="text-2xl font-bold text-[#1a2744] mb-4"

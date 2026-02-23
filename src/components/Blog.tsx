@@ -1,9 +1,9 @@
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock, Activity, Flame, HeartCrack } from "lucide-react";
 
 const posts = [
   {
     category: "Ansiedade",
-    emoji: "😰",
+    icon: Activity,
     title: "Crise de ansiedade: o que fazer nos primeiros 5 minutos",
     excerpt:
       "Técnicas de regulação imediata baseadas em evidências científicas. Aprenda a ativar o sistema nervoso parassimpático quando a ansiedade bate.",
@@ -13,7 +13,7 @@ const posts = [
   },
   {
     category: "Burnout",
-    emoji: "🔥",
+    icon: Flame,
     title: "Sintomas de burnout que você está ignorando",
     excerpt:
       "O esgotamento profissional não avisa antes de chegar. Conheça os 7 sinais de alerta que aparecem meses antes do colapso.",
@@ -23,7 +23,7 @@ const posts = [
   },
   {
     category: "Relacionamentos",
-    emoji: "💔",
+    icon: HeartCrack,
     title: "Por que você repete os mesmos padrões em relacionamentos",
     excerpt:
       "A psicologia dos apegos explica por que continuamos escolhendo as mesmas pessoas. E como mudar esse ciclo de uma vez por todas.",
@@ -72,7 +72,7 @@ export function Blog() {
                 className="h-36 flex items-center justify-center text-6xl"
                 style={{ backgroundColor: post.color }}
               >
-                {post.emoji}
+                <post.icon size={64} style={{ color: post.textColor }} />
               </div>
 
               {/* Content */}

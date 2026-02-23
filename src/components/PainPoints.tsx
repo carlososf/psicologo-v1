@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Activity, HeartCrack, Flame, Repeat, Moon, Search } from "lucide-react";
 
 const pains = [
   {
-    emoji: "😰",
+    icon: Activity,
     title: "Ansiedade",
     description:
       "O coração acelera sem motivo aparente. Pensamentos que não param. Medo de situações que outros encaram com facilidade.",
@@ -11,7 +12,7 @@ const pains = [
     textColor: "#334f34",
   },
   {
-    emoji: "💔",
+    icon: HeartCrack,
     title: "Luto & Perdas",
     description:
       "A dor de perder alguém ou algo essencial. O vazio que parece não ter fundo. A sensação de que nada voltará a ser igual.",
@@ -20,7 +21,7 @@ const pains = [
     textColor: "#7a5c3a",
   },
   {
-    emoji: "🔥",
+    icon: Flame,
     title: "Burnout & Carreira",
     description:
       "Esgotamento total. Trabalhar é um suplício. Aquela paixão pelo que fazia sumiu e você não sabe como recuperar.",
@@ -29,7 +30,7 @@ const pains = [
     textColor: "#9b3a2f",
   },
   {
-    emoji: "🌀",
+    icon: Repeat,
     title: "Relacionamentos",
     description:
       "Padrões que se repetem. Comunicação que falha. A sensação de estar sempre dando mais do que recebendo.",
@@ -38,7 +39,7 @@ const pains = [
     textColor: "#3a5296",
   },
   {
-    emoji: "🌑",
+    icon: Moon,
     title: "Depressão",
     description:
       "O cinza que toma conta de tudo. Sair da cama é uma batalha. O prazer em coisas que amava simplesmente desapareceu.",
@@ -47,7 +48,7 @@ const pains = [
     textColor: "#1a2744",
   },
   {
-    emoji: "🪞",
+    icon: Search,
     title: "Autoconhecimento",
     description:
       "Quem sou eu além dos papéis que desempenho? Terapia não é só para crises — é para quem quer entender a si mesmo.",
@@ -93,7 +94,9 @@ export function PainPoints() {
                 borderColor: active === i ? pain.textColor + "40" : "#e4ede4",
               }}
             >
-              <span className="text-4xl block mb-4">{pain.emoji}</span>
+              <span className="block mb-4" style={{ color: pain.textColor }}>
+                <pain.icon size={36} />
+              </span>
               <h3
                 style={{ fontFamily: "'Lora', serif", color: pain.textColor }}
                 className="text-xl font-bold mb-3"

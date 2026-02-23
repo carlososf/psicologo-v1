@@ -5,6 +5,7 @@ import { PainPoints } from "./components/PainPoints";
 import { Approach } from "./components/Approach";
 import { Therapists } from "./components/Therapists";
 import { HowItWorks } from "./components/HowItWorks";
+import { ClinicGallery } from "./components/ClinicGallery";
 import { Testimonials } from "./components/Testimonials";
 import { Blog } from "./components/Blog";
 import { Scheduling } from "./components/Scheduling";
@@ -37,7 +38,10 @@ export function App() {
         {/* 5. How It Works + FAQ — Porto Seguro */}
         <HowItWorks />
 
-        {/* 6. Testimonials — Prova Social */}
+        {/* 6. Clinic Gallery — Conforto */}
+        <ClinicGallery />
+
+        {/* 7. Testimonials — Prova Social */}
         <Testimonials />
 
         {/* 7. Blog — SEO + Conteúdo */}
